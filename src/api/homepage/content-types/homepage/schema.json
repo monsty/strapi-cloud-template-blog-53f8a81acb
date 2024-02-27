@@ -12,16 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
-    "Subtitle": {
-      "type": "string"
-    },
-    "Features": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.features"
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.cover",
+        "blocks.features",
+        "blocks.testimonials"
+      ]
     }
   }
 }

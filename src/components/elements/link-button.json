@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_link_buttons",
+  "info": {
+    "displayName": "LinkButton"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    },
+    "Theme": {
+      "type": "enumeration",
+      "enum": [
+        "Primary",
+        "Secondary"
+      ]
+    }
+  }
+}

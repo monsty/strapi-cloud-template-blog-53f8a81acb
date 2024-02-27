@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_covers",
+  "info": {
+    "displayName": "Cover",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.link-button",
+      "max": 2
+    }
+  }
+}

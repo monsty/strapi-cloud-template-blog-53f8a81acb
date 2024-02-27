@@ -986,9 +986,9 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.String;
-    Features: Attribute.Component<'shared.features'>;
+    Blocks: Attribute.DynamicZone<
+      ['blocks.cover', 'blocks.features', 'blocks.testimonials']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

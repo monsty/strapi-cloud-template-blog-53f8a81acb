@@ -1,12 +1,56 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface SharedFeatures extends Schema.Component {
-  collectionName: 'components_shared_features';
+export interface BlocksCover extends Schema.Component {
+  collectionName: 'components_shared_covers';
   info: {
-    displayName: 'Features';
+    displayName: 'Cover';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Image: Attribute.Media;
+    Buttons: Attribute.Component<'elements.link-button', true> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
+export interface BlocksFeatures extends Schema.Component {
+  collectionName: 'components_blocks_features';
+  info: {
+    displayName: 'Features';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Link: Attribute.Component<'elements.link-button'>;
+  };
+}
+
+export interface BlocksTestimonials extends Schema.Component {
+  collectionName: 'components_blocks_testimonials';
+  info: {
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    Title: Attribute.String;
+  };
+}
+
+export interface ElementsLinkButton extends Schema.Component {
+  collectionName: 'components_elements_link_buttons';
+  info: {
+    displayName: 'LinkButton';
+  };
+  attributes: {
+    Title: Attribute.String;
+    URL: Attribute.String;
+    Theme: Attribute.Enumeration<['Primary', 'Secondary']>;
   };
 }
 
@@ -75,7 +119,10 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'shared.features': SharedFeatures;
+      'blocks.cover': BlocksCover;
+      'blocks.features': BlocksFeatures;
+      'blocks.testimonials': BlocksTestimonials;
+      'elements.link-button': ElementsLinkButton;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

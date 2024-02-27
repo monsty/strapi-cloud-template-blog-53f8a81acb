@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_features",
+  "info": {
+    "displayName": "Features",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link-button"
+    }
+  }
+}
